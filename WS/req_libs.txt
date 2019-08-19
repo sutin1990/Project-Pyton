@@ -1,0 +1,7 @@
+flask
+flask_cors
+pandas
+sqlalchemy
+pyodbc
+pywin32-224-cp36-cp36m-win32.whl
+schedule

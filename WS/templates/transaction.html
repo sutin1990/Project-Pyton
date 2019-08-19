@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="static/img/f_logo.jpg">
+  <link rel="icon" type="image/png" href="static/img/f_logo.jpg">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    POS Transaction Viewer
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="static/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+
+   <!-- Material Design Bootstrap -->
+   <link href="static/css/mdb.min.css" rel="stylesheet">
+
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="static/demo/demo.css" rel="stylesheet" />
+
+  <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="http://www.fanslink.co.th/" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="static/img/logo-small.png">
+          </div>
+        </a>
+        <a href="http://www.fanslink.co.th/" class="simple-text logo-normal">
+          Fanslink
+          <!-- <div class="logo-image-big">
+            <img src="../static/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li >
+            <a href="/monitoring">
+              <i class="nc-icon nc-tv-2"></i>
+              <p>Monitoring</p>
+            </a>
+          </li>
+ 
+          <li class="active ">
+              <a href="/transaction">
+                <i class="nc-icon nc-zoom-split"></i>
+                <p>Transaction Viewer</p>
+              </a>
+            </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">POS Transaction Viewer</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <form>
+                  <div class="input-group no-border">
+                    <input type="text" value="" class="form-control" placeholder="Search...">
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <i class="nc-icon nc-zoom-split"></i>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <!-- <div class="panel-header panel-header-lg">
+  
+  <canvas id="bigDashboardChart"></canvas>
+  
+  
+</div> -->
+  
+      <!-- *************** content ***************  -->  
+      <div class="content">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title"> Today</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+
+
+                        <table class="table" id="tblResult">
+                          <thead class=" text-primary">
+                              <th>Transaction</th>
+                              <th>Load From POS</th>
+                              <th>Post to SAP</th>
+                              <th>Branch</th>  
+                              <th>Invoice No.</th>
+                              <th>Invoice Date</th>  
+                              <th class="text-right">Total Amount</th>
+                              <th>Load Status</th>  
+                              <th>Note</th>  
+                            
+                          </thead>
+                          <tbody>
+                             
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+          </div> 
+
+
+
+      </div>
+        
+      <footer class="footer footer-black  footer-white ">
+        <div class="container-fluid">
+          <div class="row">
+            <nav class="footer-nav">
+              <ul>
+                <li>
+                 
+                </li>
+                <li>
+                  
+                </li>
+                <li>
+                
+                </li>
+              </ul>
+            </nav>
+            <div class="credits ml-auto">
+              <span class="copyright">
+                ©
+                <script>
+                  document.write(new Date().getFullYear())
+                </script>
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="static/js/core/jquery.min.js"></script>
+  <script src="static/js/core/popper.min.js"></script>
+  <script src="static/js/core/bootstrap.min.js"></script>
+  <script src="static/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+  <!-- Chart JS -->
+  <!-- <script src="static/js/plugins/chartjs.min.js"></script> -->
+  <!--  Notifications Plugin    -->
+  <script src="static/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="static/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="static/demo/demo.js"></script>
+ <!-- Bootstrap core JavaScript -->
+ <script type="text/javascript" src="static/js/bootstrap.min.js"></script> 
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="static/js/mdb.min.js"></script>  
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+  <!-- <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> -->
+
+  <script>
+
+    function parseJsonDate(jsonDate) {
+        //console.log(jsonDate)
+        var completedDate = new Date(parseInt(jsonDate.replace("/Date(", "").replace(")/")));
+        // from http://www.webdeveloper.com/forum/showthread.php?67608-Date()-format-as-mm-dd-yyyy
+        var dd = completedDate.getDate();
+        var mm = completedDate.getMonth() + 1; //January is 0! 
+        var yyyy = completedDate.getFullYear(); 
+        var hh = completedDate.getHours();
+        var mn = completedDate.getMinutes();
+        var sec = completedDate.getSeconds();
+
+        if(dd<10){dd='0'+dd} 
+        if(mm<10){mm='0'+mm}
+        if(hh<10){hh='0'+hh}
+        if(mn<10){mn='0'+mn}
+        if(sec<10){sec='0'+sec}
+
+        return dd + '/'+mm+ '/'+yyyy+ ' ' + hh+ ':'+mn+ ':' +sec
+    }
+
+    function TransactionViewerLoad()
+    {
+      $.ajax({
+            type: "POST",
+            url: "http://192.168.5.155:8081/transactionview",
+            // The key needs to match your method's input parameter (case-sensitive).
+            //data: JSON.stringify({ title: title }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(res){
+              //console.log(res)
+              var tr;
+              $.each(res, function(row_k, row_v) {
+                tr = $("<tr></tr>");
+                $.each(row_v, function(col_k,col_v){
+                  //console.log(col_k)
+                  if (col_k == "Total Amount"){
+                    tr.append("<td class='text-right'>" + col_v.toLocaleString({ minimumFractionDigits: 2 }) + "</td>");  
+                  }
+                  else if (col_k == "Load from POS") {
+                      var options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                      var dateTimeFormat = new Intl.DateTimeFormat('en-GB', options);
+                      tr.append("<td>" + dateTimeFormat.format(new Date(col_v)) + "</td>"); 
+                      //tr.append("<td>" + parseJsonDate(col_v) + "</td>");
+                      
+                      
+                      
+                  }
+                  else if (col_k == "Post to SAP") {
+                      var options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                      var dateTimeFormat = new Intl.DateTimeFormat('en-GB', options);
+                      tr.append("<td>" + dateTimeFormat.format(new Date(col_v)) + "</td>"); 
+                  }
+                  else if (col_k == "Invoice Date") {
+                      var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+                      var dateTimeFormat = new Intl.DateTimeFormat('en-GB', options);
+                      tr.append("<td>" + dateTimeFormat.format(new Date(col_v)) + "</td>"); 
+                  }
+                  else{
+                    tr.append("<td>" + col_v + "</td>"); 
+                  }
+                  
+                });
+                $("#tblResult").append(tr);
+              });
+                
+              },
+            failure: function(errMsg) {
+                alert(errMsg);
+            }
+        });
+
+    }   
+    $(document).ready(function() {
+      TransactionViewerLoad()
+
+     
+
+    });
+
+  </script>
+</body>
+
+</html>

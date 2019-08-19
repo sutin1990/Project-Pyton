@@ -1,0 +1,46 @@
+!***กรณีต่อเน็ทไม่ได้ ให้ copy folder python36-32 ไปลงใน C: ของลูกค้าได้เลย
+
+step 1 install python ไฟล์ ที่ Tools run file python.exe
+ติ๊กเลือก Add python36 to path
+เลือก customize installation
+เลือก install all user 
+เสร็จแล้ว ใส่ path เป็น C:\Python36-32
+แล้ว install
+
+กรณี edit setup
+next ไปเรื่อยๆ ที่ Advanced Options ให้เลือก Add Python to environment variables เพิ่มมา
+
+step 2 install python libraly
+วิธีการ เปิด cmd แล้วไปที่ path req_libs.txt
+ แล้วรันคำสั่ง
+pip install -r req_libs.txt
+=========================
+
+หลังลงเสร็จทดสอบรัน python
+========การรันpython=============
+เปิด cmd administrator ขึ้นมา แล้วพิมพ์ python แล้วตามด้วยชื่อไฟล์.pyที่จะรัน start 
+**แก้ไขกรณีพาสเต็ม (ชั่วคราวถ้าปิด cmd ไปแล้วเปิดมาใหม่ก็หาpath ไม่เจอ)
+set PATH=%PATH%;C:\python36-32\;C:\python36-32\Scripts
+-------
+ขั้นตอนconfig ไฟล์ต่างๆ
+1.แก้ไขไฟล์ mMonitoring.py และ mSchedule.py ไปที่ในส่วนของการ connect โดยแก้ไขชื่อ server ใหม่
+2.ต้องไปแก้ ip ที่ไฟล์html 2 ไฟล์ ใน folder templates เป็น ip เครื่องที่ติดตั้ง (ต้องหาวิธี get ip มาใส่แบบ auto)
+-----
+
+------
+การสร้าง service
+1.รัน command prompt แบบ admin ใช้คำสั่ง nssm.exe install POS_SAPB1_Mornitoring เพื่อสร้าง service ของ ตัว Mornitoring และ nssm.exe install POS_SAPB1_Schedule ทั้งสอง service 
+แล้วใส่ 
+path:C:\Python36\Python.exe 
+Startup directory: D:\Fanslink\System\WS
+Arguments:D:\Fanslink\System\WS\mMonitoring.py
+
+และทำ Schedule ด้วย
+path:C:\Python36\Python.exe 
+Startup directory: D:\Fanslink\System\WS
+Arguments:D:\Fanslink\System\WS\mSchedule.py
+
+เสร็จแล้ว ไปที่ service เพื่อ start service
+
+การลบ service
+เปิด cmd พิมพ์คำสั่ง sc delete POS_SAPB1_Schedule

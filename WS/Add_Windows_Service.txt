@@ -1,0 +1,25 @@
+sc create POS_SAPB1_Schedule binpath= "C:\Python36\Python.exe C:\POS_Data\System\WS\mSchedule.py" DisplayName= "POS_SAPB1_Schedule" start= auto
+
+sc delete POS_SAPB1_Schedule
+
+
+nssm.exe install POS_SAPB1_Schedule
+
+path: C:\Python36\Python.exe
+
+Startup directory: C:\POS_Data\System\WS
+
+Arguments: C:\POS_Data\System\WS\mSchedule.py
+
+
+
+nssm.exe install POS_SAPB1_Monitoring
+
+path: C:\Python36\Python.exe
+
+Startup directory: C:\POS_Data\System\WS
+
+Arguments: C:\POS_Data\System\WS\mMonitoring.py
+
+
+

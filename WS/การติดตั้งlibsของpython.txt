@@ -1,0 +1,6 @@
+เปิด command แล้ว พิมพ์คำสั่ง
+pip install -r req_libs.txt
+==============
+========การรันpython=============
+python แล้วตามด้วยชื่อไฟล์.pyที่จะรัน start **แก้ไขกรณีพาสเต็ม
+set path=%path%;C:\python36;C:\python36\Scripts
